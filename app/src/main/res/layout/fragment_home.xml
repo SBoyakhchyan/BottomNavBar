@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.HomeFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_categories"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:padding="20dp"
+        android:text="@string/categories"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/im_apparel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/purple_700"
+        android:padding="8dp"
+        android:src="@drawable/ic_apparel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_categories" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/im_beauty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        android:background="#DDC845"
+        android:padding="8dp"
+        android:src="@drawable/ic_beauty"
+        app:layout_constraintStart_toEndOf="@id/im_apparel"
+        app:layout_constraintTop_toBottomOf="@id/tv_categories" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/im_shoes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        android:background="#E41E30"
+        android:padding="8dp"
+        android:src="@drawable/ic_shoes"
+        app:layout_constraintStart_toEndOf="@id/im_beauty"
+        app:layout_constraintTop_toBottomOf="@id/tv_categories" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/im_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        android:background="@color/teal_200"
+        android:padding="8dp"
+        android:src="@drawable/ic_arrow_more"
+        app:layout_constraintStart_toEndOf="@id/im_shoes"
+        app:layout_constraintTop_toBottomOf="@id/tv_categories" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
