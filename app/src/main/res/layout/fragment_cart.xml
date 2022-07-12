@@ -16,7 +16,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tabTextColor="@color/purple_700"
         android:background="@color/white"
-        app:tabIndicatorFullWidth="false"/>
+        app:tabIndicatorFullWidth="false"
+        app:tabSelectedTextColor="@color/design_default_color_error" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vp_fragment_viewpager"

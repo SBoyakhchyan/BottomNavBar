@@ -13,4 +13,12 @@
     <string name="tab_text_apparel">Apparel</string>
     <string name="tab_text_beauty">Beauty</string>
     <string name="tab_text_shoes">Shoes</string>
+    <string name="first_tab">first</string>
+    <string name="second_tab">second</string>
+    <string name="third_tab">third</string>
+    <string name="one_tab">one</string>
+    <string name="two_tab">two</string>
+    <string name="three_tab">three</string>
+    <string name="icon_and_text_tabs">Icon and Text Tabs</string>
+
 </resources>

@@ -28,7 +28,8 @@ class CartFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_cart, container, false)
+        //val view = inflater.inflate(R.layout.activity_main, container, false)
+        val view = inflater.inflate(R.layout.activity_main_new, container, false)
         return view
     }
 
@@ -41,47 +42,84 @@ class CartFragment : Fragment() {
     }
 
     private fun initView() {
-        tabLayout = requireView().findViewById(R.id.tl_fragment_tabs)
-        pager = requireView().findViewById(R.id.vp_fragment_viewpager)
+        tabLayout = requireView().findViewById(R.id.new_tab_layout)
+        pager = requireView().findViewById(R.id.new_view_pager)
     }
 
     private fun initTabLayout() {
         TabLayoutMediator(tabLayout, pager) { tab, position ->
             when (position) {
                 0 -> {
-                    tab.text = getString(R.string.tab_text_apparel)
-                    tab.setIcon(R.drawable.ic_apparel)
-                    tab.icon?.setTint(ContextCompat.getColor(requireContext(), R.color.teal_700))
+                    tab.text = getString(R.string.one_tab)
+                    tab.setIcon(R.drawable.ic_heart_broken)
+                    tab.icon?.setTint(ContextCompat.getColor(requireContext(), R.color.white))
                 }
                 1 -> {
-                    tab.text = getString(R.string.tab_text_beauty)
-                    tab.setIcon(R.drawable.ic_beauty)
-                    tab.icon?.setTint(ContextCompat.getColor(requireContext(), R.color.purple_500))
-                    tab.icon?.alpha = 60
+                    tab.text = getString(R.string.two_tab)
+                    tab.setIcon(R.drawable.ic_phone)
+                    tab.icon?.setTint(ContextCompat.getColor(requireContext(), R.color.white))
                 }
                 2 -> {
-                    tab.text = getString(R.string.tab_text_shoes)
-                    tab.setIcon(R.drawable.ic_shoes)
-                    tab.icon?.setTint(ContextCompat.getColor(requireContext(), R.color.teal_200))
-                    tab.icon?.alpha = 60
-
+                    tab.text = getString(R.string.three_tab)
+                    tab.setIcon(R.drawable.ic_account)
+                    tab.icon?.setTint(ContextCompat.getColor(requireContext(), R.color.white))
                 }
             }
         }.attach()
-
-        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabSelected(tab: TabLayout.Tab) {
-                tab.icon?.alpha = 250
-            }
-
-            override fun onTabUnselected(tab: TabLayout.Tab) {
-                tab.icon?.alpha = 60
-            }
-
-            override fun onTabReselected(tab: TabLayout.Tab?) {}
-
-        })
     }
+//second
+//    private fun initTabLayout() {
+//        TabLayoutMediator(tabLayout, pager) { tab, position ->
+//           when (position) {
+//               0 -> {
+//                   tab.text = getString(R.string.first_tab)
+//                }
+//                1 -> {
+//                    tab.text = getString(R.string.second_tab)
+//                                    }
+//                2 -> {
+//                    tab.text = getString(R.string.third_tab)
+//                }
+//            }
+//        }.attach()
+//    }
+// first
+//    private fun initTabLayout() {
+//        TabLayoutMediator(tabLayout, pager) { tab, position ->
+//            when (position) {
+//                0 -> {
+//                    tab.text = getString(R.string.tab_text_apparel)
+//                    tab.setIcon(R.drawable.ic_apparel)
+//                    tab.icon?.setTint(ContextCompat.getColor(requireContext(), R.color.teal_700))
+//                }
+//                1 -> {
+//                    tab.text = getString(R.string.tab_text_beauty)
+//                    tab.setIcon(R.drawable.ic_beauty)
+//                    tab.icon?.setTint(ContextCompat.getColor(requireContext(), R.color.purple_500))
+//                    tab.icon?.alpha = 60
+//                }
+//                2 -> {
+//                    tab.text = getString(R.string.tab_text_shoes)
+//                    tab.setIcon(R.drawable.ic_shoes)
+//                    tab.icon?.setTint(ContextCompat.getColor(requireContext(), R.color.teal_200))
+//                    tab.icon?.alpha = 60
+//                }
+//            }
+//        }.attach()
+//
+//        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+//            override fun onTabSelected(tab: TabLayout.Tab) {
+//                tab.icon?.alpha = 250
+//            }
+//
+//            override fun onTabUnselected(tab: TabLayout.Tab) {
+//                tab.icon?.alpha = 60
+//            }
+//
+//            override fun onTabReselected(tab: TabLayout.Tab?) {}
+//
+//        })
+//    }
 
     private fun initPager() {
         adapter = SectionAdapter(childFragmentManager, lifecycle, list)

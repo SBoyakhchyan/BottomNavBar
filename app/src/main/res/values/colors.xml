@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="color_nav_icon">#6A6969</color>
     <color name="color_nav_icon_selected">#CACA29</color>
+    <color name="new_tab_layout_back">#2196F3</color>
 </resources>

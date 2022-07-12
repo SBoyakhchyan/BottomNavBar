@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/cart_selector.xml" value="0.158" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/home_selector.xml" value="0.158" />
+        <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_arrow_more.xml" value="0.158" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_beach.xml" value="0.158" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_cart.xml" value="0.158" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_cart_selected.xml" value="0.158" />
@@ -22,6 +23,7 @@
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/profile_selector.xml" value="0.158" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/search_selector.xml" value="0.158" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/activity_main_new.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_apparel.xml" value="0.25" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_beauty.xml" value="0.2359375" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_cart.xml" value="0.2" />
@@ -32,6 +34,7 @@
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_shoes.xml" value="0.2359375" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/menu/menu.xml" value="0.25" />
+        <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/menu/toolbar_menu.xml" value="0.16" />
       </map>
     </option>
   </component>
