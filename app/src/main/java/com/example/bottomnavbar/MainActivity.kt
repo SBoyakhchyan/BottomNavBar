@@ -2,58 +2,41 @@ package com.example.bottomnavbar
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import androidx.fragment.app.Fragment
-import com.example.bottomnavbar.fragments.*
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var bottomNavigationView: BottomNavigationView
+
+    private lateinit var bottomNav: BottomNavigationView
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setCurrentFragment(HomeFragment())
-
-        bottomNavigationView = findViewById(R.id.bottomNavigation)
-        bottomNavigationView.itemIconTintList = null
-
-        bottomNavigationView.setOnItemSelectedListener { it ->
-            when (it.itemId) {
-                R.id.home -> {
-                    setCurrentFragment(HomeFragment()).addToBackStack(R.string.bottom_nav_item_home.toString())
-                    true
-                }
-                R.id.search -> {
-                    setCurrentFragment(SearchFragment()).addToBackStack(R.string.backstack_tag.toString())
-                    true
-                }
-                R.id.cart -> {
-                    setCurrentFragment(CartFragment()).addToBackStack(R.string.backstack_tag.toString())
-                    true
-                }
-                R.id.profile -> {
-                    setCurrentFragment(ProfileFragment()).addToBackStack(R.string.backstack_tag.toString())
-                    true
-                }
-                R.id.more -> {
-                    setCurrentFragment(MoreFragment()).addToBackStack(R.string.backstack_tag.toString())
-                    true
-                }
-
-                else -> {
-                    setCurrentFragment(MoreFragment()).addToBackStack(R.string.backstack_tag.toString())
-                    true
-                }
-            }
-
-        }
-        supportActionBar?.hide()
+        initView()
+        bottomNav.setupWithNavController(navController)
+        NavigationUI.setupActionBarWithNavController(this, navController)
     }
 
-    private fun setCurrentFragment(fragment: Fragment) =
-        supportFragmentManager.beginTransaction().apply {
-            add(R.id.nav_container, fragment).commit()
-        }
+    private fun initView(){
+        bottomNav = findViewById(R.id.bottomNavigation)
+        navController = findNavController(R.id.container_root)
+    }
+
+
+    override fun onBackPressed() {
+        if(navController.currentDestination != navController.findDestination(R.id.homeFragment))
+            super.onBackPressed()
+        else navController.popBackStack()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
 }

@@ -1,14 +1,15 @@
 package com.example.bottomnavbar.fragments
 
+import android.os.Binder
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.bottomnavbar.R
 import com.example.bottomnavbar.SectionAdapter
+import com.example.bottomnavbar.databinding.FragmentCartBinding
 import com.example.bottomnavbar.tablayoutfragments.ApparelFragment
 import com.example.bottomnavbar.tablayoutfragments.BeautyFragment
 import com.example.bottomnavbar.tablayoutfragments.ShoesFragment
@@ -21,29 +22,66 @@ class CartFragment : Fragment() {
     private lateinit var pager: ViewPager2
     private lateinit var adapter: SectionAdapter
     private var list = ArrayList<Fragment>()
-
+    private lateinit var binding: FragmentCartBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        //val view = inflater.inflate(R.layout.activity_main, container, false)
-        val view = inflater.inflate(R.layout.activity_main_new, container, false)
-        return view
+    ): View {
+
+        binding = FragmentCartBinding.inflate(inflater, container, false)
+        binding.apply { registerForContextMenu(this.myToolbar) }
+        binding.apply { registerForContextMenu(this.ivBackArrow) }
+
+        return binding.root
+
     }
+
+    override fun onCreateContextMenu(
+        menu: ContextMenu,
+        v: View,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+
+        val inflater: MenuInflater = requireActivity().menuInflater
+        inflater.inflate(R.menu.menu_three_dots, menu)
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.save -> {
+                Toast.makeText(context, "saved", Toast.LENGTH_SHORT).show()
+            }
+            R.id.delete -> {
+                Toast.makeText(context, "deleted", Toast.LENGTH_SHORT).show()
+            }
+            R.id.search -> {
+                Toast.makeText(context, "searched", Toast.LENGTH_SHORT).show()
+            }
+            R.id.sync -> {
+                Toast.makeText(context, "synced", Toast.LENGTH_SHORT).show()
+            }
+        }
+        return true
+    }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         initView()
         setList()
         initPager()
         initTabLayout()
     }
 
+
     private fun initView() {
-        tabLayout = requireView().findViewById(R.id.new_tab_layout)
-        pager = requireView().findViewById(R.id.new_view_pager)
+        binding = FragmentCartBinding.bind(requireView())
+        tabLayout = binding.tlFragmentTabs
+        pager = binding.vpFragmentViewpager
     }
 
     private fun initTabLayout() {
@@ -131,5 +169,4 @@ class CartFragment : Fragment() {
         list.add(BeautyFragment())
         list.add(ShoesFragment())
     }
-
 }

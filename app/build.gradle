@@ -16,6 +16,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+
     buildTypes {
         release {
             minifyEnabled false
@@ -28,6 +29,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
     }
 }
 
@@ -42,6 +46,20 @@ dependencies {
     implementation 'androidx.fragment:fragment-ktx:1.5.0'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.0'
+
+    // nav fragment
+
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.0'
+
+    // Feature module Support
+    implementation 'androidx.navigation:navigation-dynamic-features-fragment:2.5.0'
+
+    // Testing Navigation
+    androidTestImplementation 'androidx.navigation:navigation-testing:2.5.0'
+
+    // Jetpack Compose Integration
+    implementation 'androidx.navigation:navigation-compose:2.5.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

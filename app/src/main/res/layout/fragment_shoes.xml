@@ -8,7 +8,7 @@
     tools:context=".tablayoutfragments.ShoesFragment">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_apparel"
+        android:id="@+id/tv_shoes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Shoes to cart"
@@ -18,5 +18,18 @@
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="35sp"
         android:gravity="center"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btn_to_apparel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="go to apparel"
+        android:textColor="@color/purple_500"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_shoes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="100dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
