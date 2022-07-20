@@ -20,5 +20,12 @@
     <string name="two_tab">two</string>
     <string name="three_tab">three</string>
     <string name="icon_and_text_tabs">Icon and Text Tabs</string>
+    <string name="network_item_drawer">My Networks</string>
+    <string name="wifi_on_map_item_drawer">WiFi On Map</string>
+    <string name="data_usage_item_drawer">Data Usage</string>
+    <string name="add_hidden_network_item_drawer">Add Hidden Network</string>
+    <string name="header_text">Header text</string>
+    <string name="open_drawer">Open</string>
+    <string name="close_drawerr">Close</string>
 
 </resources>

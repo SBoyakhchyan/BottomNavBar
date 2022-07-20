@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/networkItem"
+                android:icon="@drawable/ic_wifi"
+                android:title="@string/network_item_drawer" />
+            <item
+                android:id="@+id/wifiOnMap"
+                android:icon="@drawable/ic_wifi_on_map"
+                android:title="@string/wifi_on_map_item_drawer" />
+            <item
+                android:id="@+id/dataUsage"
+                android:icon="@drawable/ic_data_usage"
+                android:title="@string/data_usage_item_drawer" />
+        </menu>
+
+    </item>
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/add_hidden_network"
+                android:icon="@drawable/ic_add"
+                android:title="@string/add_hidden_network_item_drawer" />
+        </menu>
+
+    </item>
+
+</menu>

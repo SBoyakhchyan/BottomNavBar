@@ -169,4 +169,6 @@ class CartFragment : Fragment() {
         list.add(BeautyFragment())
         list.add(ShoesFragment())
     }
+
+
 }
