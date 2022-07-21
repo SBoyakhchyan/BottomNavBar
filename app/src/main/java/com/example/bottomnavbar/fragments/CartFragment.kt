@@ -1,6 +1,5 @@
 package com.example.bottomnavbar.fragments
 
-import android.os.Binder
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
@@ -35,7 +34,6 @@ class CartFragment : Fragment() {
         binding.apply { registerForContextMenu(this.ivBackArrow) }
 
         return binding.root
-
     }
 
     override fun onCreateContextMenu(
@@ -47,6 +45,16 @@ class CartFragment : Fragment() {
 
         val inflater: MenuInflater = requireActivity().menuInflater
         inflater.inflate(R.menu.menu_three_dots, menu)
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        initView()
+        setList()
+        initPager()
+        initTabLayout()
     }
 
     override fun onContextItemSelected(item: MenuItem): Boolean {
@@ -65,16 +73,6 @@ class CartFragment : Fragment() {
             }
         }
         return true
-    }
-
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        initView()
-        setList()
-        initPager()
-        initTabLayout()
     }
 
 

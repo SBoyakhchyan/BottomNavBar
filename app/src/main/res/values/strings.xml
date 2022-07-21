@@ -27,5 +27,9 @@
     <string name="header_text">Header text</string>
     <string name="open_drawer">Open</string>
     <string name="close_drawerr">Close</string>
+    <string name="apparel_text">Apparel</string>
+    <string name="beauty_text">Beauty</string>
+    <string name="shoes_text">Shoes</string>
+    <string name="more_text">More</string>
 
 </resources>

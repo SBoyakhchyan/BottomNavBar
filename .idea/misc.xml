@@ -25,15 +25,20 @@
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/search_selector.xml" value="0.158" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/activity_main_new.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_add_hidden_network.xml" value="0.25" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_apparel.xml" value="0.25" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_beauty.xml" value="0.2359375" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_cart.xml" value="0.2" />
+        <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_data_usage.xml" value="0.25" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_more.xml" value="0.25" />
+        <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_my_networks.xml" value="0.25" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_search.xml" value="0.25" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_shoes.xml" value="0.2359375" />
+        <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_wi_fi_on_map.xml" value="0.25" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/header_nav_drawer.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/item_user.xml" value="0.25" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/menu/drawer_menu.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/menu/menu.xml" value="0.25" />

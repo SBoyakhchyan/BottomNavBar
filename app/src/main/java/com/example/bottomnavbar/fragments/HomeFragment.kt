@@ -27,10 +27,10 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.cartFragment)
         }
         binding.imBeauty.setOnClickListener {
-            findNavController().navigate(R.id.cartFragment)
+            findNavController().navigate(R.id.action_homeFragment_to_beautyFragment)
         }
         binding.imShoes.setOnClickListener {
-            findNavController().navigate(R.id.cartFragment)
+            findNavController().navigate(R.id.action_homeFragment_to_shoesFragment)
         }
     }
 

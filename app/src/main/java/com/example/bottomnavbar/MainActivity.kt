@@ -1,7 +1,9 @@
 package com.example.bottomnavbar
 
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -18,7 +20,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    //private lateinit var toggle: ActionBarDrawerToggle
+//  private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var bottomNav: BottomNavigationView
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -38,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 //            )
 //            drawerLayout.addDrawerListener(toggle)
 //            toggle.syncState()
-            supportActionBar?.setDisplayHomeAsUpEnabled(true)
+//           supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
             navDrawerView.setNavigationItemSelectedListener {
                 when (it.itemId) {
@@ -52,7 +54,7 @@ class MainActivity : AppCompatActivity() {
                         toastForDrawer("Used data opened")
                     }
                     R.id.add_hidden_network -> {
-                        toastForDrawer("New hidden network was added")
+                        navController.navigate(R.id.drawer_nav_graph)
                     }
                 }
                 drawerLayout.closeDrawer(GravityCompat.START)
@@ -65,7 +67,8 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         bottomNav.setupWithNavController(navController)
-        supportActionBar
+
+        //drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
 
     }
 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_nav_graph"
+    app:startDestination="@id/addHiddenNetwork">
+
+    <fragment
+        android:id="@+id/myNetworks"
+        android:name="com.example.bottomnavbar.drawerfragments.MyNetworks"
+        android:label="My networks"
+        tools:layout="@layout/fragment_my_networks" />
+    <fragment
+        android:id="@+id/wiFiOnMap"
+        android:name="com.example.bottomnavbar.drawerfragments.WiFiOnMap"
+        android:label="WiFi On Map"
+        tools:layout="@layout/fragment_wi_fi_on_map" />
+    <fragment
+        android:id="@+id/dataUsage2"
+        android:name="com.example.bottomnavbar.drawerfragments.DataUsage"
+        android:label="Data Usage"
+        tools:layout="@layout/fragment_data_usage" />
+    <fragment
+        android:id="@+id/addHiddenNetwork"
+        android:name="com.example.bottomnavbar.drawerfragments.AddHiddenNetwork"
+        android:label="Add Hidden Network"
+        tools:layout="@layout/fragment_add_hidden_network" />
+</navigation>
