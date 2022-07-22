@@ -11,4 +11,5 @@
     <color name="color_nav_icon_selected">#CACA29</color>
     <color name="new_tab_layout_back">#2196F3</color>
     <color name="drawer_background">#1884A5</color>
+    <color name="list_sample_back">#F1F1B5</color>
 </resources>

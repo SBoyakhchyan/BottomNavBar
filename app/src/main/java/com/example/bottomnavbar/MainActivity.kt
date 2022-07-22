@@ -1,9 +1,7 @@
 package com.example.bottomnavbar
 
 import android.os.Bundle
-import android.view.MenuItem
 import android.widget.Toast
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -20,9 +18,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-//  private lateinit var toggle: ActionBarDrawerToggle
+
+    //  private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var bottomNav: BottomNavigationView
     private lateinit var navController: NavController
+
+    //private lateinit var drawerNavController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var drawerLayout: DrawerLayout
 
@@ -45,6 +46,7 @@ class MainActivity : AppCompatActivity() {
             navDrawerView.setNavigationItemSelectedListener {
                 when (it.itemId) {
                     R.id.networkItem -> {
+                        navController.navigate(R.id.drawer_nav_graph)
                         toastForDrawer("Network selected")
                     }
                     R.id.wifiOnMap -> {
@@ -54,7 +56,11 @@ class MainActivity : AppCompatActivity() {
                         toastForDrawer("Used data opened")
                     }
                     R.id.add_hidden_network -> {
+                        //navController.navInflater.inflate(R.navigation.drawer_nav_graph)
                         navController.navigate(R.id.drawer_nav_graph)
+                        toastForDrawer("Add hidden networks selected")
+
+
                     }
                 }
                 drawerLayout.closeDrawer(GravityCompat.START)
