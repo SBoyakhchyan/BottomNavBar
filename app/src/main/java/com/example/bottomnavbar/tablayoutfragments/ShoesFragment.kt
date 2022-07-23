@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
 import androidx.core.content.ContextCompat.getColor
+import androidx.core.view.size
 import androidx.fragment.app.Fragment
 import com.example.bottomnavbar.Constants
 import com.example.bottomnavbar.CustomAdapterShoes
@@ -46,8 +47,17 @@ class ShoesFragment : Fragment() {
 //                }
 //            }
 //        }
-        listViewShoes.setOnItemClickListener { _, view, _, _ ->
-            view.setBackgroundColor(getColor(requireContext(), R.color.teal_200))
+        listViewShoes.setOnItemClickListener { _, view, position, _ ->
+
+            for (it in 0 until listViewShoes.size - 1) {
+                if (position == it) {
+                    listViewShoes.getChildAt(it)
+                        .setBackgroundColor(getColor(requireContext(), R.color.teal_200))
+                } else {
+                    listViewShoes.getChildAt(it)
+                        .setBackgroundColor(getColor(requireContext(), R.color.list_sample_back))
+                }
+            }
         }
     }
 

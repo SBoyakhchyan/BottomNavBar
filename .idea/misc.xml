@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/cart_selector.xml" value="0.158" />
+        <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/devider.xml" value="0.2375" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/home_selector.xml" value="0.158" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_arrow_more.xml" value="0.158" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_beach.xml" value="0.158" />
@@ -38,6 +39,7 @@
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_shoes.xml" value="0.2359375" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_wi_fi_on_map.xml" value="0.25" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/header_nav_drawer.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/item_beauty.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/item_user.xml" value="0.25" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/item_user_shoes.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />

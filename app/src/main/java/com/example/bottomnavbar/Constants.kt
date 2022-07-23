@@ -17,5 +17,19 @@ class Constants {
             "https://assetscdn1.paytm.com/images/catalog/product/F/FO/FOOPUMA-MEN-BLAPUMA335823D4B59566/1563318533769_1..jpg"
         const val FILA_MEN_STACKHOUSE_SPAGHETTI =
             "https://www.fila.com/dw/image/v2/AAEJ_PRD/on/demandware.static/-/Sites-FilaUSACatalogID/default/dw0c815a87/images/ProductImages/1BM01788_014_01_e.jpg?sw=340&sh=510&sm=fit"
+        const val BEAUTY_PIC_1 =
+            "https://cdn.shopify.com/s/files/1/0274/8363/t/64/assets/collection_men_carousel_item_1_image.jpg?v=160320089085015109651631033078"
+        const val BEAUTY_PIC_2 =
+            "https://cdn.shopify.com/s/files/1/0274/8363/t/64/assets/collection_women_carousel_item_1_image.jpg?v=30496048667331044391631033079"
+        const val BEAUTY_PIC_3 =
+            "https://cdn.shopify.com/s/files/1/0274/8363/files/Rare-min_2_1024x1024.jpg?v=1619813826"
+        const val BEAUTY_PIC_4 =
+            "https://storage.googleapis.com/phototest17/FragranceBuyFullPerfumeCologneCatalog.jpg"
+        const val BEAUTY_TITLE_1 = "Smell Good FragBuy Good"
+        const val BEAUTY_TITLE_2 = "Feel FragBuy. Fabolous"
+        const val BEAUTY_TITLE_3 = "A Red Box of Gems. Captured"
+        const val BEAUTY_TITLE_4 = "Long Love FragBuy"
+
+
     }
 }

@@ -32,4 +32,5 @@ class CustomAdapterShoes(
 
         return rowView
     }
+
 }
