@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_homeFragment_to_shoesFragment"
             app:destination="@id/shoesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_apparelFragment"
+            app:destination="@id/apparelFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -47,4 +50,9 @@
         android:label="Shoes"
         tools:layout="@layout/fragment_shoes" />
     <include app:graph="@navigation/drawer_nav_graph" />
+    <fragment
+        android:id="@+id/apparelFragment"
+        android:name="com.example.bottomnavbar.tablayoutfragments.ApparelFragment"
+        android:label="fragment_apparel"
+        tools:layout="@layout/fragment_apparel" />
 </navigation>

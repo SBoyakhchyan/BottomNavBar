@@ -1,36 +1,47 @@
 package com.example.bottomnavbar
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import androidx.annotation.LayoutRes
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
 class CustomAdapterShoes(
-    context: Context,
-    @LayoutRes
-    var resource: Int,
-    var list: List<ShoesClass>
-) : ArrayAdapter<ShoesClass>(context, resource, list) {
-
-
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val inflater: LayoutInflater =
-            (context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater)
-
-        val rowView: View = inflater.inflate(resource, null, true)
-
-        val shoeBrand = rowView.findViewById<AppCompatTextView>(R.id.shoe_text)
-        val image = rowView.findViewById<AppCompatImageView>(R.id.image_shoes)
-
-        shoeBrand.text = list[position].shoeBrand
-        Glide.with(context).load(list[position].imageUrl).into(image)
-
-        return rowView
+    var listShoes: List<ShoesClass>
+) : RecyclerView.Adapter<CustomAdapterShoes.ShoesViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ShoesViewHolder {
+        val layoutInflater = LayoutInflater.from(parent.context)
+        val view = layoutInflater.inflate(R.layout.item_user_shoes, parent, false)
+        return ShoesViewHolder(view)
     }
+
+    override fun onBindViewHolder(holder: ShoesViewHolder, position: Int) {
+        val shoes = listShoes[position]
+        holder.apply {
+            shoeText.text = shoes.shoeBrand
+            price.text = shoes.price
+            Glide.with(itemView).load(shoes.imageUrl).into(imageShoes)
+        }
+    }
+
+    override fun getItemCount(): Int {
+        return listShoes.size
+    }
+
+    class ShoesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val shoeText: AppCompatTextView
+        val imageShoes: AppCompatImageView
+        val price: AppCompatTextView
+
+        init {
+            shoeText = itemView.findViewById(R.id.shoe_text)
+            imageShoes = itemView.findViewById(R.id.image_shoes)
+            price = itemView.findViewById(R.id.tvPrice)
+
+        }
+    }
+
 
 }

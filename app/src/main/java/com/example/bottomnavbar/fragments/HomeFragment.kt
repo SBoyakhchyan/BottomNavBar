@@ -24,7 +24,7 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.bind(view)
 
         binding.imApparel.setOnClickListener {
-            findNavController().navigate(R.id.cartFragment)
+            findNavController().navigate(R.id.action_homeFragment_to_apparelFragment)
         }
         binding.imBeauty.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_beautyFragment)
