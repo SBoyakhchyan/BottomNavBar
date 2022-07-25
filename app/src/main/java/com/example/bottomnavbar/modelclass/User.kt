@@ -1,4 +1,4 @@
-package com.example.bottomnavbar
+package com.example.bottomnavbar.modelclass
 
 data class User(
     var name: String,

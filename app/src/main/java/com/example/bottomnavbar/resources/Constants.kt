@@ -1,4 +1,4 @@
-package com.example.bottomnavbar
+package com.example.bottomnavbar.resources
 
 class Constants {
     companion object {

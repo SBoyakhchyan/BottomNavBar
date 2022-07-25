@@ -4,15 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.getDrawable
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.bottomnavbar.Beauty
-import com.example.bottomnavbar.BeautyAdapter
-import com.example.bottomnavbar.Constants
+import com.example.bottomnavbar.modelclass.Beauty
+import com.example.bottomnavbar.adapters.BeautyAdapter
+import com.example.bottomnavbar.resources.Constants
 import com.example.bottomnavbar.R
 
 class BeautyFragment : Fragment() {

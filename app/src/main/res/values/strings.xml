@@ -31,5 +31,7 @@
     <string name="beauty_text">Beauty</string>
     <string name="shoes_text">Shoes</string>
     <string name="more_text">More</string>
+    <string name="example_price">100AMD</string>
+    <string name="shoe_text_example">shoes description</string>
 
 </resources>

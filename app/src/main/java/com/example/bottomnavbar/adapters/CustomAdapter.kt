@@ -1,4 +1,4 @@
-package com.example.bottomnavbar
+package com.example.bottomnavbar.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,6 +9,8 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import com.bumptech.glide.Glide
+import com.example.bottomnavbar.R
+import com.example.bottomnavbar.modelclass.User
 
 class CustomAdapter(
     context: Context,

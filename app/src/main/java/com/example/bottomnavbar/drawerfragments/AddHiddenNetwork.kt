@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
 import androidx.fragment.app.Fragment
-import com.example.bottomnavbar.CustomAdapter
+import com.example.bottomnavbar.adapters.CustomAdapter
 import com.example.bottomnavbar.R
-import com.example.bottomnavbar.User
+import com.example.bottomnavbar.modelclass.User
 
 class AddHiddenNetwork : Fragment() {
     private lateinit var listView: ListView

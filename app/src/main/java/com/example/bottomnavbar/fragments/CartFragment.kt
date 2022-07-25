@@ -7,7 +7,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.example.bottomnavbar.R
-import com.example.bottomnavbar.SectionAdapter
+import com.example.bottomnavbar.adapters.SectionAdapter
 import com.example.bottomnavbar.databinding.FragmentCartBinding
 import com.example.bottomnavbar.tablayoutfragments.ApparelFragment
 import com.example.bottomnavbar.tablayoutfragments.BeautyFragment
