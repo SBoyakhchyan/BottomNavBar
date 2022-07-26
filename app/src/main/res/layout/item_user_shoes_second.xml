@@ -22,10 +22,11 @@
         style="@style/home_tag_style"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:text="@string/shoe_text_example"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@id/image_shoes_second"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/shoe_text_example" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvPrice_second"

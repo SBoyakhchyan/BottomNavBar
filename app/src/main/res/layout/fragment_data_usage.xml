@@ -8,8 +8,11 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/textTV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Data usage" />
+        android:text="Data usage"
+        android:textSize="@dimen/dimens_20sp"
+        tools:textColor="@color/black"/>
 
 </FrameLayout>
