@@ -48,11 +48,41 @@
         android:id="@+id/shoesFragment"
         android:name="com.example.bottomnavbar.tablayoutfragments.ShoesFragment"
         android:label="Shoes"
-        tools:layout="@layout/fragment_shoes" />
+        tools:layout="@layout/fragment_shoes" >
+        <action
+            android:id="@+id/action_shoesFragment_to_shoeItemFragment"
+            app:destination="@id/shoeItemFragment" />
+    </fragment>
+        <action
+            android:id="@+id/action_shoesFragment_to_addHiddenNetwork2"
+            app:destination="@id/addHiddenNetwork2" />
     <include app:graph="@navigation/drawer_nav_graph" />
     <fragment
         android:id="@+id/apparelFragment"
         android:name="com.example.bottomnavbar.tablayoutfragments.ApparelFragment"
-        android:label="fragment_apparel"
+        android:label="Aapparel"
         tools:layout="@layout/fragment_apparel" />
+    <fragment
+        android:id="@+id/addHiddenNetwork2"
+        android:name="com.example.bottomnavbar.drawerfragments.AddHiddenNetwork"
+        android:label="Add hidden network"
+        tools:layout="@layout/fragment_add_hidden_network" />
+    <fragment
+        android:id="@+id/shoeItemFragment"
+        android:name="com.example.bottomnavbar.fragments.ShoeItemFragment"
+        android:label="Shoe item"
+        tools:layout="@layout/fragment_shoe_item" >
+        <argument
+            android:name="textTV"
+            app:argType="string"
+            android:defaultValue='' />
+        <argument
+            android:name="priceTV"
+            app:argType="string"
+            android:defaultValue='' />
+        <argument
+            android:name="imageIV"
+            app:argType="string"
+            android:defaultValue='' />
+    </fragment>
 </navigation>

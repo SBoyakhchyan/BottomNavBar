@@ -4,9 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ListView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -17,15 +16,12 @@ import com.example.bottomnavbar.resources.Constants
 
 
 class ShoesFragment : Fragment(), CustomAdapterShoes.OnItemClickListener {
-    private lateinit var listViewShoes: ListView
     private var shoesList = ArrayList<ShoesClass>()
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: CustomAdapterShoes
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
     }
 
     override fun onCreateView(
@@ -44,30 +40,7 @@ class ShoesFragment : Fragment(), CustomAdapterShoes.OnItemClickListener {
         val divider = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
         divider.setDrawable(requireContext().getDrawable(R.drawable.devider_shoes)!!)
         recyclerView.addItemDecoration(divider)
-//        listViewShoes.onItemClickListener = AdapterView.OnItemClickListener { _, view, _, _ ->
-//            view.isSelected = true
-//            listViewShoes.forEach {
-//                if (it.isSelected) {
-//                    view.setBackgroundColor(getColor(requireContext(), R.color.list_sample_back))
-//                } else {
-//                    view.setBackgroundColor(getColor(requireContext(), R.color.teal_200))
-//                }
-//            }
-//        }
-//        recyclerView.setOnItemClickListener { _, view, position, _ ->
-//
-//            for (it in 0 until listViewShoes.size - 1) {
-//                if (position == it) {
-//                    listViewShoes.getChildAt(it)
-//                        .setBackgroundColor(getColor(requireContext(), R.color.teal_200))
-//                } else {
-//                    listViewShoes.getChildAt(it)
-//                        .setBackgroundColor(getColor(requireContext(), R.color.list_sample_back))
-//                }
-//            }
-//      }
     }
-
 
     private fun initList() {
         shoesList = ArrayList()
@@ -116,22 +89,22 @@ class ShoesFragment : Fragment(), CustomAdapterShoes.OnItemClickListener {
                 Constants.FILA_MEN_STACKHOUSE_SPAGHETTI, "45000AMD", 1
             )
         )
-
-
     }
 
     private fun initRecyclerView() {
         recyclerView = requireView().findViewById(R.id.recyclerViewShoes)
         adapter = CustomAdapterShoes(shoesList)
+        adapter.setListener(this)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context)
     }
 
     override fun onItemClick(shoes: ShoesClass) {
-        Toast.makeText(
-            requireContext(),
-            "onItemClick: ${shoes.price} ${shoes.shoeBrand}",
-            Toast.LENGTH_SHORT
-        ).show()
+        val action = ShoesFragmentDirections.actionShoesFragmentToShoeItemFragment(
+            shoes.shoeBrand,
+            shoes.price,
+            shoes.imageUrl
+        )
+        findNavController().navigate(action)
     }
 }

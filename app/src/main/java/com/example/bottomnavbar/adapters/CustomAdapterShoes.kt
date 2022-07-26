@@ -1,14 +1,14 @@
 package com.example.bottomnavbar.adapters
 
-import android.annotation.SuppressLint
+
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.bottomnavbar.R
@@ -59,13 +59,16 @@ class CustomAdapterShoes(
                             Toast.LENGTH_SHORT
                         ).show()
                         notifyDataSetChanged()
+                        onItemClickListener?.onItemClick(shoes)
                     }
                 }
-                is ShoesViewHolderSecond ->{
+                is ShoesViewHolderSecond -> {
                     shoeTextSecond.text = shoes.shoeBrand
                     priceSecond.text = shoes.price
                     Glide.with(itemView).load(shoes.imageUrl).into(imageShoesSecond)
                     itemView.setOnClickListener {
+                        val nav = it.findNavController()
+                        nav.navigate(R.id.action_shoesFragment_to_addHiddenNetwork2)
                         selectPosition = absoluteAdapterPosition
                         Toast.makeText(
                             itemView.context,
@@ -82,6 +85,7 @@ class CustomAdapterShoes(
     override fun getItemCount(): Int {
         return listShoes.size
     }
+
     fun setListener(onItemClickListener: OnItemClickListener) {
         this.onItemClickListener = onItemClickListener
     }
