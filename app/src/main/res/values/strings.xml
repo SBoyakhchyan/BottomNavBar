@@ -33,5 +33,7 @@
     <string name="more_text">More</string>
     <string name="example_price">100AMD</string>
     <string name="shoe_text_example">shoes description</string>
+    <string name="enter_text">enter text</string>
+    <string name="save_button">Save</string>
 
 </resources>

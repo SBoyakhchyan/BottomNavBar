@@ -9,4 +9,5 @@
     <dimen name="dimens_5dp">5dp</dimen>
     <dimen name="dimens_15">15sp</dimen>
     <dimen name="dimens_7">7dp</dimen>
+    <dimen name="dimens_15sp">15sp</dimen>
 </resources>

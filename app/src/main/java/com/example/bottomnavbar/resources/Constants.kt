@@ -29,7 +29,8 @@ class Constants {
         const val BEAUTY_TITLE_2 = "Feel FragBuy. Fabolous"
         const val BEAUTY_TITLE_3 = "A Red Box of Gems. Captured"
         const val BEAUTY_TITLE_4 = "Long Love FragBuy"
-
+        const val APP_PREFERENCES = "preferences"
+        const val TEXT_VALUE_GET = "get text value"
 
     }
 }
