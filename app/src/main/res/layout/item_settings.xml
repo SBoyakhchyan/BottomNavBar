@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_iconCamera"
+        android:layout_width="@dimen/dimens_50"
+        android:layout_height="@dimen/dimens_50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_camera"
+        android:layout_marginStart="@dimen/dimens_20"
+        android:layout_marginTop="@dimen/dimens_20"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_1st_setting"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/dimens_10"
+        android:paddingStart="@dimen/dimens_20"
+        android:paddingTop="@dimen/dimens_10"
+        android:text="Camera"
+        android:textSize="@dimen/dimens_20sp"
+        app:layout_constraintStart_toEndOf="@id/iv_iconCamera"
+        app:layout_constraintTop_toTopOf="@id/iv_iconCamera"
+        app:layout_constraintBottom_toBottomOf="@id/iv_iconCamera"/>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/btn_switchSetting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimens_20"
+        android:paddingVertical="@dimen/dimens_10"
+        app:layout_constraintBottom_toBottomOf="@id/tv_1st_setting"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_1st_setting" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

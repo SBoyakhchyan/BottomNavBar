@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_homeFragment_to_apparelFragment"
             app:destination="@id/apparelFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settings2"
+            app:destination="@id/settings2" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -85,4 +88,9 @@
             app:argType="string"
             android:defaultValue='' />
     </fragment>
+    <fragment
+        android:id="@+id/settings2"
+        android:name="com.example.bottomnavbar.drawerfragments.Settings"
+        android:label="@string/Settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

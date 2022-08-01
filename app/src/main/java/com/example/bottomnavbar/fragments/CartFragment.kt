@@ -30,8 +30,9 @@ class CartFragment : Fragment() {
     ): View {
 
         binding = FragmentCartBinding.inflate(inflater, container, false)
-        binding.apply { registerForContextMenu(this.myToolbar) }
-        binding.apply { registerForContextMenu(this.ivBackArrow) }
+        //commented to hide toolbar in cartFragment
+        //binding.apply { registerForContextMenu(this.myToolbar) }
+        //binding.apply { registerForContextMenu(this.ivBackArrow) }
 
         return binding.root
     }
@@ -167,6 +168,4 @@ class CartFragment : Fragment() {
         list.add(BeautyFragment())
         list.add(ShoesFragment())
     }
-
-
 }

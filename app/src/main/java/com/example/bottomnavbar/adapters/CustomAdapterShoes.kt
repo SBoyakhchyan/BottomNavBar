@@ -55,7 +55,11 @@ class CustomAdapterShoes(
                         selectPosition = absoluteAdapterPosition
                         Toast.makeText(
                             itemView.context,
-                            "the price is ${price.text}, and clicked position is ${position + 1}",
+                            String.format(
+                                itemView.context.getString(R.string.CustomAdapterShoesToastText),
+                                price.text,
+                                position + 1
+                            ),
                             Toast.LENGTH_SHORT
                         ).show()
                         notifyDataSetChanged()
@@ -72,7 +76,11 @@ class CustomAdapterShoes(
                         selectPosition = absoluteAdapterPosition
                         Toast.makeText(
                             itemView.context,
-                            "the price is ${priceSecond.text}, and clicked position is ${position + 1}",
+                            String.format(
+                                itemView.context.getString(R.string.CustomAdapterShoesToastText),
+                                priceSecond.text,
+                                position + 1
+                            ),
                             Toast.LENGTH_SHORT
                         ).show()
                         notifyDataSetChanged()

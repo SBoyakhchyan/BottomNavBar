@@ -7,8 +7,8 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.bottomnavbar.modelclass.Beauty
 import com.example.bottomnavbar.R
+import com.example.bottomnavbar.modelclass.Beauty
 
 class BeautyAdapter(var listBeauty: List<Beauty>) :
     RecyclerView.Adapter<BeautyAdapter.BeautyViewHolder>() {
@@ -39,6 +39,4 @@ class BeautyAdapter(var listBeauty: List<Beauty>) :
             image = itemView.findViewById(R.id.imageBeauty)
         }
     }
-
-
 }

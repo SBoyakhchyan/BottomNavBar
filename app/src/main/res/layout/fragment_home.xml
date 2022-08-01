@@ -15,7 +15,7 @@
         android:padding="@dimen/dimens_20"
         android:text="@string/categories"
         android:textColor="@color/black"
-        android:textSize="35sp"
+        android:textSize="@dimen/dimens_35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,7 +27,7 @@
         android:layout_marginStart="@dimen/dimens_10"
         android:layout_marginTop="@dimen/dimens_25"
         android:background="@color/purple_700"
-        android:padding="8dp"
+        android:padding="@dimen/dimens_8"
         android:src="@drawable/ic_apparel"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_categories" />
@@ -49,7 +49,7 @@
         android:layout_marginStart="@dimen/dimens_20"
         android:layout_marginTop="@dimen/dimens_25"
         android:background="#DDC845"
-        android:padding="8dp"
+        android:padding="@dimen/dimens_8dp"
         android:src="@drawable/ic_beauty"
         app:layout_constraintStart_toEndOf="@id/im_apparel"
         app:layout_constraintTop_toBottomOf="@id/tv_categories" />
@@ -71,7 +71,7 @@
         android:layout_marginStart="@dimen/dimens_20"
         android:layout_marginTop="@dimen/dimens_25"
         android:background="#E41E30"
-        android:padding="8dp"
+        android:padding="@dimen/dimens_8dp"
         android:src="@drawable/ic_shoes"
         app:layout_constraintStart_toEndOf="@id/im_beauty"
         app:layout_constraintTop_toBottomOf="@id/tv_categories" />
@@ -93,7 +93,7 @@
         android:layout_marginStart="@dimen/dimens_20"
         android:layout_marginTop="@dimen/dimens_25"
         android:background="@color/teal_200"
-        android:padding="8dp"
+        android:padding="@dimen/dimens_8dp"
         android:src="@drawable/ic_arrow_more"
         app:layout_constraintStart_toEndOf="@id/im_shoes"
         app:layout_constraintTop_toBottomOf="@id/tv_categories" />

@@ -10,4 +10,8 @@
     <dimen name="dimens_15">15sp</dimen>
     <dimen name="dimens_7">7dp</dimen>
     <dimen name="dimens_15sp">15sp</dimen>
+    <dimen name="dimens_50">50dp</dimen>
+    <dimen name="dimens_8">8dp</dimen>
+    <dimen name="dimens_30sp">30sp</dimen>
+    <dimen name="dimens_60">60dp</dimen>
 </resources>

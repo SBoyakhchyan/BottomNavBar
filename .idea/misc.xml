@@ -9,10 +9,14 @@
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/home_selector.xml" value="0.158" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_add.xml" value="0.2155" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_arrow_more.xml" value="0.158" />
+        <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_baseline_camera_alt_24.xml" value="0.1565" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_beach.xml" value="0.158" />
+        <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_camera.xml" value="0.1565" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_cart.xml" value="0.158" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_cart_selected.xml" value="0.158" />
+        <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_contacts.xml" value="0.1555" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_faces_for_header.xml" value="0.1735" />
+        <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_folder.xml" value="0.1555" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_home.xml" value="0.158" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_home_selected.xml" value="0.158" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_more.xml" value="0.158" />
@@ -23,6 +27,7 @@
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_profile_selected.xml" value="0.158" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_search.xml" value="0.158" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_search_selected.xml" value="0.158" />
+        <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/ic_wifi_on_map.xml" value="0.1555" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/more_selector.xml" value="0.158" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/profile_selector.xml" value="0.158" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/drawable/search_selector.xml" value="0.158" />
@@ -38,11 +43,13 @@
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_my_networks.xml" value="0.25" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_search.xml" value="0.25" />
+        <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_settings.xml" value="0.264" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_shoe_item.xml" value="0.25" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_shoes.xml" value="0.2359375" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/fragment_wi_fi_on_map.xml" value="0.25" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/header_nav_drawer.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/item_beauty.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/item_settings.xml" value="0.25" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/item_user.xml" value="0.25" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/item_user_shoes.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/sboya/AndroidStudioProjects/BottomNavBar/app/src/main/res/layout/item_user_shoes_second.xml" value="0.26145833333333335" />

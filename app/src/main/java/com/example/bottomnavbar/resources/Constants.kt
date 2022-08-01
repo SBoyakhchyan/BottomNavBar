@@ -1,5 +1,8 @@
 package com.example.bottomnavbar.resources
 
+import android.content.Context
+import android.content.SharedPreferences
+
 class Constants {
     companion object {
         const val IMAGE_URL_REEBOK1 =
@@ -31,6 +34,12 @@ class Constants {
         const val BEAUTY_TITLE_4 = "Long Love FragBuy"
         const val APP_PREFERENCES = "preferences"
         const val TEXT_VALUE_GET = "get text value"
+        private const val APP_SETTINGS_PREF = "SETTINGS"
+        const val SETTING_IS_ENABLE = "SETTING_IS_ENABLE"
+        const val BOOL_LIST_KEY = "BOOL_LIST_KEY"
+
+        fun getSharedForSettings(context: Context): SharedPreferences =
+            context.getSharedPreferences(APP_SETTINGS_PREF, Context.MODE_PRIVATE)
 
     }
 }

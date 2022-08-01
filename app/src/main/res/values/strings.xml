@@ -35,5 +35,8 @@
     <string name="shoe_text_example">shoes description</string>
     <string name="enter_text">enter text</string>
     <string name="save_button">Save</string>
-
+    <string name="Settings">Settings</string>
+    <string name="magpi_appName">Magpi</string>
+<string name="CustomAdapterShoesToastText">the price is %1$s, and clicked position is %2$d</string>
+    <string name="octoconnect_bottomText">OctoConnect</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.bottomnavbar
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -12,20 +13,26 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.bottomnavbar.databinding.ActivityMainBinding
+import com.example.bottomnavbar.resources.Constants
+import com.example.bottomnavbar.resources.Constants.Companion.BOOL_LIST_KEY
+import com.example.bottomnavbar.resources.Constants.Companion.SETTING_IS_ENABLE
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.gson.Gson
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
-    //  private lateinit var toggle: ActionBarDrawerToggle
+    //private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var bottomNav: BottomNavigationView
     private lateinit var navController: NavController
-
     //private lateinit var drawerNavController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var drawerLayout: DrawerLayout
+    private lateinit var settingShared: SharedPreferences
+    private var settingSwitchBoolList = mutableListOf<Boolean>()
+    private var isAdded: Boolean = false
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,8 +66,9 @@ class MainActivity : AppCompatActivity() {
                         //navController.navInflater.inflate(R.navigation.drawer_nav_graph)
                         navController.navigate(R.id.drawer_nav_graph)
                         toastForDrawer("Add hidden networks selected")
-
-
+                    }
+                    R.id.settings -> {
+                        navController.navigate(R.id.action_homeFragment_to_settings2)
                     }
                 }
                 drawerLayout.closeDrawer(GravityCompat.START)
@@ -68,14 +76,40 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+        setSettingShared()
+        addSettingBoolLIst(isAdded)
         initView()
-
-        appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        bottomNav.setupWithNavController(navController)
+        setupNavController()
 
         //drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+    }
 
+    private fun addSettingBoolLIst(isAdded: Boolean) {
+        if (isAdded) {
+            settingSwitchBoolList.add(true)
+            settingSwitchBoolList.add(false)
+            settingSwitchBoolList.add(true)
+            settingSwitchBoolList.add(true)
+            val gson = Gson()
+            val json = gson.toJson(settingSwitchBoolList)
+            settingShared.edit()
+                .putString(SETTING_IS_ENABLE, json)
+                .apply()
+            setIsAdded()
+        }
+    }
+
+    private fun setSettingShared() {
+        settingShared = Constants.getSharedForSettings(this)
+        // get boolean key
+        isAdded = settingShared.getBoolean(BOOL_LIST_KEY, true)
+    }
+
+    private fun setIsAdded() {
+        if (isAdded)
+            settingShared.edit()
+                .putBoolean(BOOL_LIST_KEY, false)
+                .apply()
     }
 
 //    override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -84,6 +118,14 @@ class MainActivity : AppCompatActivity() {
 //        }
 //        return super.onOptionsItemSelected(item)
 //    }
+
+
+    private fun setupNavController() {
+        appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        bottomNav.setupWithNavController(navController)
+    }
+
 
     private fun initView() {
         drawerLayout = binding.drawerLayout

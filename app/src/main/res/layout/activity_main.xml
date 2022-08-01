@@ -55,7 +55,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="OctoConnect"
+        android:text="@string/octoconnect_bottomText"
         android:layout_gravity="bottom"
         android:textSize="35sp"
         android:textColor="#2D5BA8"

@@ -24,4 +24,11 @@
         <item name="android:gravity">center_horizontal</item>
     </style>
 
+    <style name="Magpi_text_style">
+        <item name="android:textSize">@dimen/dimens_20sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">@dimen/dimens_20</item>
+    </style>
+
 </resources>
