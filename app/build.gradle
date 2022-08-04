@@ -46,9 +46,9 @@ dependencies {
     //recycler view
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     //new
-    implementation 'androidx.fragment:fragment-ktx:1.5.0'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.5.0'
+    implementation 'androidx.fragment:fragment-ktx:1.5.1'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.1'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.1'
 
     //glide
     implementation 'com.github.bumptech.glide:glide:4.13.2'
@@ -56,22 +56,24 @@ dependencies {
 
     // nav fragment
 
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.5.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.1'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.1'
 
     // Feature module Support
-    implementation 'androidx.navigation:navigation-dynamic-features-fragment:2.5.0'
+    implementation 'androidx.navigation:navigation-dynamic-features-fragment:2.5.1'
 
     // Testing Navigation
-    androidTestImplementation 'androidx.navigation:navigation-testing:2.5.0'
+    androidTestImplementation 'androidx.navigation:navigation-testing:2.5.1'
 
     // Jetpack Compose Integration
-    implementation 'androidx.navigation:navigation-compose:2.5.0'
+    implementation 'androidx.navigation:navigation-compose:2.5.1'
 
     //preferences
     implementation 'androidx.preference:preference-ktx:1.2.0'
  //gson json
     implementation 'com.google.code.gson:gson:2.9.0'
+
+    implementation 'androidx.activity:activity-ktx:1.5.1'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

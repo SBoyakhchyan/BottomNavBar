@@ -38,8 +38,8 @@ class Constants {
         const val SETTING_IS_ENABLE = "SETTING_IS_ENABLE"
         const val BOOL_LIST_KEY = "BOOL_LIST_KEY"
 
-        fun getSharedForSettings(context: Context): SharedPreferences =
-            context.getSharedPreferences(APP_SETTINGS_PREF, Context.MODE_PRIVATE)
+        fun Context.getSharedForSettings(): SharedPreferences =
+            getSharedPreferences(APP_SETTINGS_PREF, Context.MODE_PRIVATE)
 
     }
 }

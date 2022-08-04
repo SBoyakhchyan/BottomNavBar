@@ -12,8 +12,8 @@ import com.example.bottomnavbar.R
 import com.example.bottomnavbar.adapters.SettingsAdapter
 import com.example.bottomnavbar.databinding.FragmentSettingsBinding
 import com.example.bottomnavbar.modelclass.SettingsModel
-import com.example.bottomnavbar.resources.Constants
 import com.example.bottomnavbar.resources.Constants.Companion.SETTING_IS_ENABLE
+import com.example.bottomnavbar.resources.Constants.Companion.getSharedForSettings
 import com.google.gson.Gson
 
 class Settings : Fragment() {
@@ -23,20 +23,20 @@ class Settings : Fragment() {
     private lateinit var binding: FragmentSettingsBinding
     private lateinit var settingShared: SharedPreferences
     private lateinit var settingSwitchBoolList: Array<Boolean>
-
+    private lateinit var gson: Gson
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
         val view = inflater.inflate(R.layout.fragment_settings, container, false)
         binding = FragmentSettingsBinding.bind(view)
-
         setSharedSetting()
         getSettingBoolList()
         setList()
         return binding.root
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -46,10 +46,14 @@ class Settings : Fragment() {
 
     private fun setList() {
         settingsList = ArrayList()
-        val settingCamera = SettingsModel((R.drawable.ic_camera), "Camera", settingSwitchBoolList[0])
-        val settingContacts = SettingsModel((R.drawable.ic_contacts), "Contacts", settingSwitchBoolList[1])
-        val settingLocation = SettingsModel((R.drawable.ic_location), "Location", settingSwitchBoolList[2])
-        val settingStorage = SettingsModel((R.drawable.ic_folder), "Storage", settingSwitchBoolList[3])
+        val settingCamera =
+            SettingsModel((R.drawable.ic_camera), "Camera", settingSwitchBoolList[0])
+        val settingContacts =
+            SettingsModel((R.drawable.ic_contacts), "Contacts", settingSwitchBoolList[1])
+        val settingLocation =
+            SettingsModel((R.drawable.ic_location), "Location", settingSwitchBoolList[2])
+        val settingStorage =
+            SettingsModel((R.drawable.ic_folder), "Storage", settingSwitchBoolList[3])
 
         settingsList.add(settingCamera)
         settingsList.add(settingContacts)
@@ -59,13 +63,16 @@ class Settings : Fragment() {
 
     private fun initRecyclerView() {
         recyclerViewSettings = binding.recyclerViewSettings
-        adapterSettings = SettingsAdapter(settingsList)
+        adapterSettings = SettingsAdapter(settingsList) { position, isChecked ->
+            settingSwitchBoolList[position] = isChecked
+            settingShared.edit().putString(SETTING_IS_ENABLE, gson.toJson((settingSwitchBoolList)))
+                .apply()
+        }
         recyclerViewSettings.adapter = adapterSettings
         recyclerViewSettings.layoutManager = LinearLayoutManager(context)
     }
 
     private fun getSettingBoolList() {
-        val gson = Gson()
         settingSwitchBoolList = gson.fromJson(
             settingShared.getString(SETTING_IS_ENABLE, ""),
             Array<Boolean>::class.java
@@ -73,7 +80,8 @@ class Settings : Fragment() {
     }
 
     private fun setSharedSetting() {
-        settingShared = Constants.getSharedForSettings(requireContext())
+        settingShared = requireContext().getSharedForSettings()
+        gson = Gson()
     }
 
 }

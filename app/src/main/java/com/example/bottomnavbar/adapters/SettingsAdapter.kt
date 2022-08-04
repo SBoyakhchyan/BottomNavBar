@@ -11,16 +11,13 @@ import com.bumptech.glide.Glide
 import com.example.bottomnavbar.R
 import com.example.bottomnavbar.databinding.ItemSettingsBinding
 import com.example.bottomnavbar.modelclass.SettingsModel
-import com.example.bottomnavbar.resources.Constants
-import com.example.bottomnavbar.resources.Constants.Companion.SETTING_IS_ENABLE
 import com.google.gson.Gson
 
 class SettingsAdapter(
-    var listSettings: List<SettingsModel>
+    var listSettings: List<SettingsModel>,
+    val itemCallBack: (position: Int, isChecked: Boolean) -> Unit
 ) : RecyclerView.Adapter<SettingsAdapter.SettingsViewHolder>() {
     private lateinit var bindingItemSettingsBinding: ItemSettingsBinding
-    private lateinit var boolList: Array<Boolean>
-    private val gson = Gson()
 
     inner class SettingsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val icon: AppCompatImageView
@@ -45,17 +42,12 @@ class SettingsAdapter(
     override fun onBindViewHolder(holder: SettingsViewHolder, position: Int) {
         val setting = listSettings[position]
         holder.apply {
-            val shared = Constants.getSharedForSettings(itemView.context)
-            boolList =
-                gson.fromJson(shared.getString(SETTING_IS_ENABLE, ""), Array<Boolean>::class.java)
+
             settingName.text = setting.settingName
             switchBtn.isChecked = setting.switchButton
             Glide.with(itemView.context).load(setting.settingIcon).into(icon)
             switchBtn.setOnCheckedChangeListener { _, isChecked ->
-                boolList[position] = isChecked
-                shared.edit()
-                    .putString(SETTING_IS_ENABLE, gson.toJson(boolList))
-                    .apply()
+                    itemCallBack.invoke(position, isChecked)
             }
         }
     }

@@ -13,9 +13,9 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.bottomnavbar.databinding.ActivityMainBinding
-import com.example.bottomnavbar.resources.Constants
 import com.example.bottomnavbar.resources.Constants.Companion.BOOL_LIST_KEY
 import com.example.bottomnavbar.resources.Constants.Companion.SETTING_IS_ENABLE
+import com.example.bottomnavbar.resources.Constants.Companion.getSharedForSettings
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.gson.Gson
 
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var settingShared: SharedPreferences
     private var settingSwitchBoolList = mutableListOf<Boolean>()
-    private var isAdded: Boolean = false
+    private var isDefaultSet: Boolean = true
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,11 +77,13 @@ class MainActivity : AppCompatActivity() {
 
         }
         setSettingShared()
-        addSettingBoolLIst(isAdded)
+        addSettingBoolLIst(isDefaultSet)
         initView()
         setupNavController()
 
         //drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+
+
     }
 
     private fun addSettingBoolLIst(isAdded: Boolean) {
@@ -95,18 +97,18 @@ class MainActivity : AppCompatActivity() {
             settingShared.edit()
                 .putString(SETTING_IS_ENABLE, json)
                 .apply()
-            setIsAdded()
+            setIsDefaultSet()
         }
     }
 
     private fun setSettingShared() {
-        settingShared = Constants.getSharedForSettings(this)
+        settingShared = getSharedForSettings()
         // get boolean key
-        isAdded = settingShared.getBoolean(BOOL_LIST_KEY, true)
+        isDefaultSet = settingShared.getBoolean(BOOL_LIST_KEY, true)
     }
 
-    private fun setIsAdded() {
-        if (isAdded)
+    private fun setIsDefaultSet() {
+        if (isDefaultSet)
             settingShared.edit()
                 .putBoolean(BOOL_LIST_KEY, false)
                 .apply()
