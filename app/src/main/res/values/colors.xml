@@ -14,4 +14,5 @@
     <color name="list_sample_back">#F1F1B5</color>
     <color name="shoe_btn_back">#FF6E40</color>
     <color name="Magpi_bottom_back">#2F7BE8</color>
+    <color name="drawer_text_color">#2D5BA8</color>
 </resources>

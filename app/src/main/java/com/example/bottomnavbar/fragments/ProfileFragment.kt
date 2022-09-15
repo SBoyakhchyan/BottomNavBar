@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.bottomnavbar.R
 import com.example.bottomnavbar.databinding.FragmentProfileBinding
 import com.example.bottomnavbar.resources.Constants
@@ -14,13 +15,13 @@ import com.example.bottomnavbar.resources.Constants
 class ProfileFragment : Fragment() {
     private lateinit var binding: FragmentProfileBinding
     private lateinit var preferences: SharedPreferences
+    private val viewModel : ProfileFragmentViewModel by viewModels()
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 
@@ -28,13 +29,18 @@ class ProfileFragment : Fragment() {
         binding = FragmentProfileBinding.bind(view)
         preferences = getPreferences(requireContext())
         binding.etProfile.setText(preferences.getString(Constants.TEXT_VALUE_GET, ""))
-
-        binding.btnPrefSave.setOnClickListener {
-            val value = binding.etProfile.text.toString()
-            preferences.edit()
-                .putString(Constants.TEXT_VALUE_GET, value)
-                .apply()
-        }
+            binding.btnPrefSave.setOnClickListener{
+                viewModel.liveData.value = viewModel.liveData.value?.plus(1)
+                viewModel.liveData.observe(viewLifecycleOwner){
+                    binding.etProfile.setText(it.toString())
+                }
+            }
+//        binding.btnPrefSave.setOnClickListener {
+//            val value = binding.etProfile.text.toString()
+//            preferences.edit()
+//                .putString(Constants.TEXT_VALUE_GET, value)
+//                .apply()
+//        }
     }
 
     companion object {

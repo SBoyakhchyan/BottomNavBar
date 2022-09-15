@@ -3,23 +3,27 @@ package com.example.bottomnavbar.fragments
 //import android.widget.SearchView
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.provider.ContactsContract
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ListView
-import android.widget.SimpleCursorAdapter
 import androidx.appcompat.widget.SearchView
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.bottomnavbar.R
+import com.example.bottomnavbar.adapters.ContactAdapter
 import com.example.bottomnavbar.databinding.FragmentSearchBinding
+
 
 class SearchFragment : Fragment() {
     private lateinit var searchView: SearchView
-    private lateinit var listViewSearch: ListView
+    private lateinit var listViewSearch: RecyclerView
     private lateinit var binding: FragmentSearchBinding
 
     var columns = listOf(
@@ -38,7 +42,6 @@ class SearchFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_search, container, false)
         binding = FragmentSearchBinding.bind(view)
         return binding.root
@@ -50,7 +53,7 @@ class SearchFragment : Fragment() {
         if (ActivityCompat.checkSelfPermission(
                 requireContext(),
                 Manifest.permission.READ_CONTACTS
-            ) != PackageManager.PERMISSION_GRANTED
+            )!= PackageManager.PERMISSION_GRANTED
         ) {
             ActivityCompat.requestPermissions(
                 requireActivity(),
@@ -81,12 +84,6 @@ class SearchFragment : Fragment() {
 
     @SuppressLint("Recycle")
     private fun readContact() {
-        val from = listOf(
-            ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME,
-            ContactsContract.CommonDataKinds.Phone.NUMBER
-        ).toTypedArray()
-        val to = intArrayOf(android.R.id.text1, android.R.id.text2)
-
 
         var resolver = requireActivity().contentResolver.query(
             ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
@@ -96,33 +93,34 @@ class SearchFragment : Fragment() {
             ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME
         )
 
-        val adapter = SimpleCursorAdapter(
-            requireContext(),
-            android.R.layout.simple_list_item_2,
-            resolver,
-            from,
-            to,
-            0
-        )
-        listViewSearch.adapter = adapter
+        if (resolver != null) {
+            val adapter = ContactAdapter(resolver) {
+                requireActivity().startActivity(Intent(Intent.ACTION_VIEW,Uri.parse(it)))
 
 
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
+                true
             }
+            listViewSearch.adapter = adapter
+            listViewSearch.layoutManager = LinearLayoutManager(requireContext())
 
-            override fun onQueryTextChange(newText: String?): Boolean {
-                resolver = requireActivity().contentResolver.query(
-                    ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-                    columns,
-                    "${ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME} LIKE ?",
-                    Array(1) { "%$newText%" },
-                    ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME
-                )
-                adapter.changeCursor(resolver)
-                return false
-            }
-        })
+
+            searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    return false
+                }
+
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    resolver = requireActivity().contentResolver.query(
+                        ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+                        columns,
+                        "${ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME} LIKE ?",
+                        Array(1) { "%$newText%" },
+                        ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME
+                    )
+                    adapter.changeCursor(resolver)
+                    return false
+                }
+            })
+        }
     }
 }

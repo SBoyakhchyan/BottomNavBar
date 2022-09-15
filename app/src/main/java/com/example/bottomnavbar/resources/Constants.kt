@@ -2,6 +2,9 @@ package com.example.bottomnavbar.resources
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.example.bottomnavbar.api.SimpleApi
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class Constants {
     companion object {
@@ -37,9 +40,17 @@ class Constants {
         private const val APP_SETTINGS_PREF = "SETTINGS"
         const val SETTING_IS_ENABLE = "SETTING_IS_ENABLE"
         const val BOOL_LIST_KEY = "BOOL_LIST_KEY"
+        const val BASE_URL = "https://api.github.com/"
+        const val END_POINT = "users/list"
 
         fun Context.getSharedForSettings(): SharedPreferences =
             getSharedPreferences(APP_SETTINGS_PREF, Context.MODE_PRIVATE)
 
+        val retrofit: Retrofit = Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+
+        fun getService(): SimpleApi = retrofit.create(SimpleApi::class.java)
     }
 }

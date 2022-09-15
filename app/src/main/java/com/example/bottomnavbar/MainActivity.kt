@@ -131,7 +131,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun initView() {
         drawerLayout = binding.drawerLayout
-        bottomNav = findViewById(R.id.bottomNavigation)
+        bottomNav = binding.bottomNavigation
+       // bottomNav = findViewById(R.id.bottomNavigation)
         navController = findNavController(R.id.container_root)
     }
 
